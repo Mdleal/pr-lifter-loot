@@ -11,7 +11,7 @@ const categories = [
   'Dumbbells',
   'Sets',
   'Accessories',
-  'Balls'
+  // 'Balls' // Removed this category
 ];
 
 const ProductsPage: React.FC = () => {

@@ -2,11 +2,11 @@ import { Product, Color, ProductComponent, ProductVariant } from '../types';
 
 // Define standard colors that can be used for components
 const kidsBarbellComponentColors: Color[] = [
-  { name: 'Crimson Red', hex: '#DC143C', available: true, image: 'https://nextcloud.mike-d82.com/apps/files_sharing/publicpreview/pYgPMfL36SW3wEj?file=/&fileId=155726&x=1920&y=1080&a=true&etag=ad693c036f101a4dc4693678ea83a072' },
-  { name: 'Ocean Blue', hex: '#0077BE', available: true, image: 'https://nextcloud.mike-d82.com/apps/files_sharing/publicpreview/pYgPMfL36SW3wEj?file=/&fileId=155726&x=1920&y=1080&a=true&etag=ad693c036f101a4dc4693678ea83a072' },
-  { name: 'Hot Pink', hex: '#FF69B4', available: true, image: 'https://nextcloud.mike-d82.com/apps/files_sharing/publicpreview/BDRpDscCNoa6624?file=/&fileId=155724&x=1920&y=1080&a=true&etag=92ef3f08273fa9d7f5bc7aecc0855ac6' },
+  { name: 'Crimson Red', hex: '#DC143C', available: true, image: 'https://nextcloud.mike-d82.com/apps/files_sharing/publicpreview/pYgPMfL36SW3wEj?file=/&amp;fileId=155726&amp;x=1920&amp;y=1080&amp;a=true&amp;etag=ad693c036f101a4dc4693678ea83a072' },
+  { name: 'Ocean Blue', hex: '#0077BE', available: true, image: 'https://nextcloud.mike-d82.com/apps/files_sharing/publicpreview/pYgPMfL36SW3wEj?file=/&amp;fileId=155726&amp;x=1920&amp;y=1080&amp;a=true&amp;etag=ad693c036f101a4dc4693678ea83a072' },
+  { name: 'Hot Pink', hex: '#FF69B4', available: true, image: 'https://nextcloud.mike-d82.com/apps/files_sharing/publicpreview/BDRpDscCNoa6624?file=/&amp;fileId=155724&amp;x=1920&amp;y=1080&amp;a=true&amp;etag=92ef3f08273fa9d7f5bc7aecc0855ac6' },
   { name: 'Arctic White', hex: '#F0F8FF', available: true, image: '/images/product/barbell/plate-white.webp' },
-  { name: 'Tropical Turquoise', hex: '#40E0D0', available: true, image: 'https://nextcloud.mike-d82.com/apps/files_sharing/publicpreview/BDRpDscCNoa6624?file=/&fileId=155724&x=1920&y=1080&a=true&etag=92ef3f08273fa9d7f5bc7aecc0855ac6' }
+  { name: 'Tropical Turquoise', hex: '#40E0D0', available: true, image: 'https://nextcloud.mike-d82.com/apps/files_sharing/publicpreview/BDRpDscCNoa6624?file=/&amp;fileId=155724&amp;x=1920&amp;y=1080&amp;a=true&amp;etag=92ef3f08273fa9d7f5bc7aecc0855ac6' }
 ];
 
 const kidsKettlebellMainImage = 'https://wordpress.mike-d82.com/wp-content/uploads/2024/04/kettlebell-toddler-clear-background-copy.png';
@@ -53,13 +53,13 @@ export const products: Product[] = [
     ageRange: '3-7 years',
     dimensions: 'Bar: 90cm L x 2.5cm D. Plate sets included.',
     price: 79.99, // Base price for the set
-    mainImage: 'https://nextcloud.mike-d82.com/apps/files_sharing/publicpreview/tLaWftps6MNLMTs?file=/&fileId=155723&x=1920&y=1080&a=true&etag=3429a52e438faa6ead8385bebed1383d',
+    mainImage: 'https://nextcloud.mike-d82.com/apps/files_sharing/publicpreview/tLaWftps6MNLMTs?file=/&amp;fileId=155723&amp;x=1920&amp;y=1080&amp;a=true&amp;etag=3429a52e438faa6ead8385bebed1383d',
     galleryImages: [
       '/images/product/barbell/kids-barbell-lifestyle-1.webp',
       '/images/product/barbell/kids-barbell-lifestyle-2.webp',
       '/images/product/barbell/kids-barbell-all-colors.webp',
-      'https://nextcloud.mike-d82.com/apps/files_sharing/publicpreview/pYgPMfL36SW3wEj?file=/&fileId=155726&x=1920&y=1080&a=true&etag=ad693c036f101a4dc4693678ea83a072',
-      'https://nextcloud.mike-d82.com/apps/files_sharing/publicpreview/BDRpDscCNoa6624?file=/&fileId=155724&x=1920&y=1080&a=true&etag=92ef3f08273fa9d7f5bc7aecc0855ac6',
+      'https://nextcloud.mike-d82.com/apps/files_sharing/publicpreview/pYgPMfL36SW3wEj?file=/&amp;fileId=155726&amp;x=1920&amp;y=1080&amp;a=true&amp;etag=ad693c036f101a4dc4693678ea83a072',
+      'https://nextcloud.mike-d82.com/apps/files_sharing/publicpreview/BDRpDscCNoa6624?file=/&amp;fileId=155724&amp;x=1920&amp;y=1080&amp;a=true&amp;etag=92ef3f08273fa9d7f5bc7aecc0855ac6',
       '/images/product/barbell/plate-white.webp',
     ],
     components: [
