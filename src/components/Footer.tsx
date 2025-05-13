@@ -1,116 +1,117 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Twitter, Mail, Dumbbell } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Youtube, Dumbbell } from 'lucide-react';
 
 const Footer: React.FC = () => {
-  // Handle link click to ensure smooth scrolling to top
-  const handleLinkClick = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
+  const currentYear = new Date().getFullYear();
+
+  const footerLinks = [
+    { name: 'About Us', path: '/about' },
+    { name: 'Contact Us', path: '/contact' },
+    // FAQ link removed
+    // { name: 'FAQ', path: '/faq' },
+    { name: 'Shipping Policy', path: '/shipping' },
+    { name: 'Privacy Policy', path: '/privacy' },
+    { name: 'Terms of Service', path: '/terms' },
+  ];
+
+  const socialLinks = [
+    { name: 'Facebook', icon: <Facebook className="h-6 w-6" />, url: 'https://facebook.com' },
+    { name: 'Instagram', icon: <Instagram className="h-6 w-6" />, url: 'https://instagram.com' },
+    { name: 'Twitter', icon: <Twitter className="h-6 w-6" />, url: 'https://twitter.com' },
+    { name: 'YouTube', icon: <Youtube className="h-6 w-6" />, url: 'https://youtube.com' },
+  ];
 
   return (
-    <footer className="bg-sky-800 text-white pt-12 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-gray-800 text-gray-300">
+      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Logo and description */}
-          <div className="col-span-1">
-            <Link to="/" className="flex items-center" onClick={handleLinkClick}>
-              <Dumbbell className="h-8 w-8 mr-2" />
+          {/* Logo and About */}
+          <div className="space-y-4">
+            <Link to="/" className="flex items-center text-white">
+              <Dumbbell className="h-8 w-8 mr-2 text-sky-400" />
               <span className="font-bold text-xl">PRLifterLoot</span>
             </Link>
-            <p className="mt-4 text-sm text-sky-200">
-              Your one-stop shop for premium lifting gear and apparel. Achieve your personal records with PRLifterLoot!
+            <p className="text-sm">
+              Equipping the next generation of lifters with fun, safe, and engaging fitness gear.
             </p>
-            <div className="mt-6 flex space-x-4">
-              <a href="#" className="text-sky-200 hover:text-white transition-colors">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-sky-200 hover:text-white transition-colors">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-sky-200 hover:text-white transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="mailto:contact@prlifterloot.com" className="text-sky-200 hover:text-white transition-colors">
-                <Mail className="h-5 w-5" />
-              </a>
+            <div className="flex space-x-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-sky-400 transition-colors"
+                  aria-label={social.name}
+                >
+                  {social.icon}
+                </a>
+              ))}
             </div>
           </div>
-          
-          {/* Quick links */}
-          <div className="col-span-1">
-            <h3 className="text-lg font-semibold mb-4">Shop</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/products" className="text-sky-200 hover:text-white transition-colors" onClick={handleLinkClick}>
-                  All Products
-                </Link>
-              </li>
-              <li>
-                <Link to="/products?category=Barbells" className="text-sky-200 hover:text-white transition-colors" onClick={handleLinkClick}>
-                  Barbells & Plates
-                </Link>
-              </li>
-              <li>
-                <Link to="/products?category=Apparel" className="text-sky-200 hover:text-white transition-colors" onClick={handleLinkClick}>
-                  Apparel
-                </Link>
-              </li>
-              <li>
-                <Link to="/products?category=Accessories" className="text-sky-200 hover:text-white transition-colors" onClick={handleLinkClick}>
-                  Accessories
-                </Link>
-              </li>
-              <li>
-                <Link to="/products?category=Bundles" className="text-sky-200 hover:text-white transition-colors" onClick={handleLinkClick}>
-                  Bundles
-                </Link>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Quick Links</h3>
+            <ul className="mt-4 space-y-2">
+              {footerLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.path}
+                    className="text-base text-gray-300 hover:text-sky-400 transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+               {/* External Products Link */}
+               <li>
+                <a
+                  href="https://wordpress.mike-d82.com/products/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-base text-gray-300 hover:text-sky-400 transition-colors"
+                >
+                  Products
+                </a>
               </li>
             </ul>
           </div>
-          
-          {/* Newsletter */}
-          <div className="col-span-1">
-            <h3 className="text-lg font-semibold mb-4">Stay Updated</h3>
-            <p className="text-sm text-sky-200 mb-4">
-              Subscribe to our newsletter for exclusive deals, new product launches, and lifting tips.
+
+          {/* Newsletter Signup */}
+          <div>
+            <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Stay Updated</h3>
+            <p className="mt-4 text-base text-gray-300">
+              Subscribe to our newsletter for the latest product releases, promotions, and fitness tips for kids.
             </p>
-            <form className="flex flex-col sm:flex-row gap-2">
+            <form className="mt-4 sm:flex sm:max-w-md">
+              <label htmlFor="email-address" className="sr-only">
+                Email address
+              </label>
               <input
                 type="email"
-                placeholder="Your email"
-                className="px-4 py-2 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-sky-500"
+                name="email-address"
+                id="email-address"
+                autoComplete="email"
+                required
+                className="appearance-none min-w-0 w-full bg-white border border-transparent rounded-md py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-sky-500"
+                placeholder="Enter your email"
               />
-              <button
-                type="submit"
-                className="bg-yellow-400 text-sky-800 px-4 py-2 rounded-md font-medium hover:bg-yellow-500 transition-colors"
-              >
-                Subscribe
-              </button>
+              <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+                <button
+                  type="submit"
+                  className="w-full bg-sky-500 flex items-center justify-center border border-transparent rounded-md py-2 px-4 text-base font-medium text-white hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-sky-500"
+                >
+                  Subscribe
+                </button>
+              </div>
             </form>
           </div>
         </div>
-        
-        <div className="border-t border-sky-700 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-sky-300">
-              &copy; {new Date().getFullYear()} PRLifterLoot. All rights reserved.
-            </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link to="/privacy" className="text-sm text-sky-300 hover:text-white transition-colors" onClick={handleLinkClick}>
-                Privacy Policy
-              </Link>
-              <Link to="/terms" className="text-sm text-sky-300 hover:text-white transition-colors" onClick={handleLinkClick}>
-                Terms of Service
-              </Link>
-              <Link to="/shipping" className="text-sm text-sky-300 hover:text-white transition-colors" onClick={handleLinkClick}>
-                Shipping Policy
-              </Link>
-            </div>
-          </div>
+
+        <div className="mt-8 border-t border-gray-700 pt-8 text-center">
+          <p className="text-base text-gray-400">&copy; {currentYear} PRLifterLoot. All rights reserved.</p>
         </div>
       </div>
     </footer>

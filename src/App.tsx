@@ -10,7 +10,8 @@ import HomePage from './pages/HomePage';
 // ProductsPage is no longer directly used for the /products route
 // import ProductsPage from './pages/ProductsPage'; 
 import ProductDetailPage from './pages/ProductDetailPage';
-import CartPage from './pages/CartPage';
+// CartPage is no longer directly used for the /cart route
+// import CartPage from './pages/CartPage'; 
 import FAQPage from './pages/FAQPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
@@ -29,7 +30,6 @@ function App() {
           <main className="flex-grow">
             <Routes>
               <Route path="/" element={<HomePage />} />
-              {/* Updated route for /products */}
               <Route 
                 path="/products" 
                 element={<ExternalRedirect to="https://wordpress.mike-d82.com/products/" />} 
@@ -41,7 +41,11 @@ function App() {
                 <Route path="/internal-products-listing" element={<ProductsPage />} />
               */}
               <Route path="/product/:id" element={<ProductDetailPage />} />
-              <Route path="/cart" element={<CartPage />} />
+              {/* Updated route for /cart */}
+              <Route 
+                path="/cart" 
+                element={<ExternalRedirect to="https://wordpress.mike-d82.com/cart/" />} 
+              />
               <Route path="/faq" element={<FAQPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />

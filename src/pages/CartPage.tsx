@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import { Trash2, ChevronLeft, ShoppingBag } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
+// This component is effectively no longer used due to the redirection in App.tsx.
+// However, keeping it for now in case it's needed for other purposes or if redirection is reverted.
+// If it's confirmed to be permanently unused, it can be deleted.
+
 const CartPage: React.FC = () => {
   const { cart, removeFromCart, updateQuantity, subtotal, clearCart } = useCart();
 
@@ -29,8 +33,9 @@ const CartPage: React.FC = () => {
           <ShoppingBag className="h-16 w-16 mx-auto text-gray-400 mb-4" />
           <h2 className="text-2xl font-semibold text-gray-900 mb-2">Your cart is empty</h2>
           <p className="text-gray-600 mb-6">Looks like you haven't added any products to your cart yet.</p>
+          {/* This link will now redirect to the external products page */}
           <Link
-            to="/products"
+            to="/products" 
             className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-sky-600 hover:bg-sky-700"
           >
             Start Shopping
@@ -73,6 +78,7 @@ const CartPage: React.FC = () => {
                         <div className="flex justify-between">
                           <div>
                             <h3 className="text-lg font-medium text-gray-900">
+                              {/* This link will now redirect to the external products page if product detail page is not available */}
                               <Link to={`/product/${item.product.id}`}>
                                 {item.product.name}
                               </Link>
@@ -123,6 +129,7 @@ const CartPage: React.FC = () => {
               </ul>
             </div>
             
+            {/* This link will now redirect to the external products page */}
             <Link
               to="/products"
               className="inline-flex items-center text-sky-600 hover:text-sky-800"
@@ -162,6 +169,7 @@ const CartPage: React.FC = () => {
               </div>
               
               <button
+                onClick={() => alert('Checkout functionality is not implemented in this demo. This would typically redirect to a payment gateway or the external cart.')}
                 className="w-full mt-6 bg-sky-600 text-white py-3 px-4 rounded-md font-medium hover:bg-sky-700 transition-colors"
               >
                 Proceed to Checkout
